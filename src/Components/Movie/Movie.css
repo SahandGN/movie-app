@@ -1,12 +1,13 @@
-.task{
+.movie{
     position: relative;
     background-color: white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.158);
-    padding: 20px 20px 20px 40px;
+    padding: 20px;
     border-radius: 8px;
+    margin-bottom: 10px;
   }
   
-  .task-line{
+  .movie-line{
     content: '';
     width: 5px;
     height: 80%;
@@ -16,28 +17,35 @@
     top: 50%;
     transform: translateY(-50%);
     transition: all 200ms ease;
+    background-color: #E94560;
   }
-  .task del{
+.movie-info img{
+  border-radius: 5px;
+  padding: 2px;
+  max-width: 200px;
+  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+  .movie del{
     color: rgba(0, 0, 0, 0.486);
   }
-  .done-true{
-    background-color: #69FF34;
-  }
-  .done-false{
-    background-color: #FF4545;
-  }
-  .task__title{
+  
+  .movie-title{
     word-wrap: break-word;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
+    margin: 5px;
   }
-  .task__content{
+  .movie-content{
     margin-top: 10px;
     word-wrap: break-word;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
+    padding-top: 10px;
+    margin: 5px;
   }
-  .task__status{
+  .movie-status{
     position: absolute;
     right: 10px;
     top: 10px;
@@ -52,12 +60,17 @@
     width: 12px;
     height: 12px;
   }
-  .task__close{
+  .movie-close{
     background-color: #FF4545;
   }
-  .task__edit{
+  .movie-edit{
     background-color: #F0DC2A;
   }
-  .task__done{
+  .movie-done{
     background-color: #69FF34;
+  }
+
+  .movie-info{
+    float: left;
+    width: 80%;
   }

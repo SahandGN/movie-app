@@ -9,7 +9,7 @@ const Movie = ({ isDone, topic, content, date, cover, id }) => {
   const { deleteMovie, doneMovie, setId } = useContext(MovieContext);
   return (
     <div
-      className='task'
+      className='movie'
       initial={{ x: '-100%', margin: 0 }}
       animate={{ x: 0, marginTop: 25 }}
       exit={{
@@ -23,40 +23,43 @@ const Movie = ({ isDone, topic, content, date, cover, id }) => {
           duration: 0.3,
         },
       }}
-      transition={{
-        type: 'spring',
-        stiffness: 80,
-        damping: 10,
-      }}
     >
-      <span className={`task-line done-${isDone}`}></span>
-      <div className='task__status'>
+      <span className={`movie-line`}></span>
+      <div className='movie-status'>
         <button
           whileTap={{ scale: 2 }}
           onClick={() => deleteMovie(id)}
-          className='ball task__close'
+          className='ball movie-close'
         ></button>
         <button
           whileTap={{ scale: 2 }}
           onClick={() => setId(id)}
-          className='ball task__edit'
+          className='ball movie-edit'
         ></button>
         <button
           whileTap={{ scale: 2 }}
           onClick={() => doneMovie(id)}
-          className='ball task__done'
+          className='ball movie-done'
         ></button>
       </div>
-      <img src={cover} alt={topic + " Cover"}></img>
-      <h4 className='task__title'>
-        {isDone === true ? <del>{topic}</del> : topic}
-      </h4>
-      <h4 className='task__title'>
-        {isDone === true ? <del>{date}</del> : date}
-      </h4>
-      <p className='task__content'>
-        {isDone === true ? <del>{content}</del> : content}
-      </p>
+      <div className='movie-info'>
+        <img
+          className='movie-info'
+          src={cover}
+          alt={topic + " Cover"}>
+        </img>
+        <h4 className='movie-info movie-title'>
+          {topic}
+        </h4>
+        <p>
+          <h4 className='movie-info movie-title'>
+            {date}
+          </h4>
+        </p>
+        <p className='movie-info movie-content'>
+          {isDone === true ? <del>{content}</del> : content}
+        </p>
+      </div>
     </div>
   );
 };

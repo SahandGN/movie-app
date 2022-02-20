@@ -29,10 +29,6 @@
     display: flex;
     flex-direction: column;
   }
-  .movie-container img{
-    max-width: 200px;
-    height: auto;
-  }
 
 
 .switch {

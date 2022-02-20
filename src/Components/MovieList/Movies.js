@@ -23,8 +23,8 @@ const Movies = () => {
       <h2 className='all-movies-title'>All Movies</h2>
       <div className='movie-sort'>
         <label class="switch">
-          <input type="checkbox"/>
-            <span class="slider round"></span>
+          <input type="checkbox" />
+          <span class="slider round"></span>
         </label>
         <button onClick={deleteAll} className='clear-all' >Clear All</button>
       </div>
