@@ -4,19 +4,24 @@ import "./PopUp.css";
 import 'bootstrap';
 
 const PopUp = () => {
-  const [text, setText] = useState({ topic: "", content: "" , date:""});
+  const [text, setText] = useState({ topic: "", content: "", date: "" , cover:""});
   const { PopUp, setPopUp, editMovie } = useContext(MovieContext);
   const handleSubmit = (e, isOk) => {
-    e.preventDefault();
     if (isOk === true) {
-      alert('Movie was successfully edited');
+      editMovie(text);
     }
     setPopUp({ in: false, item: null });
-    setText({ topic: "", content: "",date:"" });
+    setText({ topic: "", content: "", date: "" ,cover:""});
   };
 
   const handleTopic = (e) => {
     setText({ ...text, topic: e.target.value });
+  };
+  const handleDate = (e) => {
+    setText({ ...text, date: e.target.value });
+  };
+  const handleCover = (e) => {
+    setText({ ...text, cover: e.target.value });
   };
   const handleContent = (e) => {
     setText({ ...text, content: e.target.value });
@@ -27,7 +32,7 @@ const PopUp = () => {
       <form onSubmit={(e) => handleSubmit(e, true)}>
         <input
           placeholder={
-            PopUp.item !== null ? "you editing " + PopUp.item.topic : "nothing"
+            PopUp.item !== null ?  PopUp.item.topic : "nothing"
           }
           value={text.topic}
           onChange={handleTopic}
@@ -35,19 +40,28 @@ const PopUp = () => {
           className="pop-up__input"
         />
         <input
-        placeholder={
-          PopUp.item !== null ? "you editing " + PopUp.item.date : "nothing"
-        }
-        value={text.date}
-        onChange={handleTopic}
-        type="number"
-        className="pop-up__input"
-      />
+          placeholder={
+            PopUp.item !== null ? PopUp.item.date : "nothing"
+          }
+          value={text.date}
+          onChange={handleDate}
+          type="number"
+          className="pop-up__input"
+        />
+        <input
+          placeholder={
+            PopUp.item !== null ? "you editing image url" : "nothing"
+          }
+          value={text.cover}
+          onChange={handleCover}
+          type="text"
+          className="pop-up__input"
+        />
         <textarea
           value={text.content}
           onChange={handleContent}
           className="pop-up__content"
-          placeholder="edit content ..."
+          placeholder={PopUp.item !== null ? PopUp.item.content : "nothing"}
         ></textarea>
         <div className="pop-up__buttons">
           <button type="submit" className="pop-up__button ok">

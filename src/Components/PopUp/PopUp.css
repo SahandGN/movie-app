@@ -13,6 +13,7 @@
     width: 400px;
     transform: translate(-50%, -50%) scale(0.9);
     transition: all 200ms ease;
+    color: #16213E;
   }
   .pop-up-show {
     transform: translate(-50%, -50%) scale(1);
