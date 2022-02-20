@@ -25,7 +25,6 @@ const AddMovie = () => {
     setText({ topic: "", content: "", date: "", cover: "" });
     if (text.topic.trim() !== "" && text.content.trim() !== "" && text.date.trim() !== "") {
       addMovies(text.topic, text.content, text.date, text.cover);
-      // addMovies(text.topic, text.content);
     } else {
       errorMessage();
     }

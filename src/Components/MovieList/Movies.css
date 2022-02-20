@@ -30,6 +30,15 @@
     flex-direction: column;
   }
 
+  .movie-container-grid {
+    height: 80%;
+    margin: 15px 5px;
+    overflow-y: auto;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+  }
+
 
 .switch {
   position: relative;
