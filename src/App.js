@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Movie from './Components/Movie/Movie';
+import AddMovie from './Components/AddMovie/AddMovie';
+import Header from './Components/Header/Header';
+import { MovieProvider } from './Components/Context/MovieContext';
+import PopUp from './Components/PopUp/PopUp';
+import OverLay from './Components/OverLay/OverLay';
+import Movies from './Components/MovieList/Movies';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MovieProvider>
+      <PopUp />
+      <OverLay />
+      <Header />
+      <div className='container'>
+        <AddMovie />
+        <Movies />
+      </div>
+    </MovieProvider>
   );
 }
 
