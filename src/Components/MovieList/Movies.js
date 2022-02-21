@@ -32,13 +32,8 @@ const Movies = () => {
     <div className='movies'>
       <h2 className='all-movies-title'>All Movies</h2>
       <div className='movie-sort'>
-        <div>
-          <button className="button" onClick={changeStyle}>
-            Click me!
-          </button>
-        </div>
         <label class="switch">
-          <input type="checkbox" />
+          <input type="checkbox" onFocus={changeStyle}/>
           <span class="slider round"></span>
         </label>
         <button onClick={deleteAll} className='clear-all' >Clear All</button>
