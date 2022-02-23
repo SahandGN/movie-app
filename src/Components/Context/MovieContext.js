@@ -9,13 +9,13 @@ export const MovieProvider = ({ children }) => {
       : 
       []
   );
-  const [doneMovieList, setDoneMovie] = useState([]);
+  const [faveMovieList, setFaveMovie] = useState([]);
   const [PopUp, setPopUp] = useState({ in: false, item: null });
   const addMovies = (topic, content,date, cover) => {
     const oldMovie = JSON.parse(localStorage.getItem('movies'));
     const newMovie = {
       id: uuid4(),
-      isDone: false,
+      isFave: false,
       topic,
       date,
       content,
@@ -29,8 +29,8 @@ export const MovieProvider = ({ children }) => {
   },
   []);
   useEffect(() => {
-    const alldoneMovie = movies.filter((movie) => movie.isDone === true);
-    setDoneMovie(alldoneMovie);
+    const allfaveMovie = movies.filter((movie) => movie.isFave === true);
+    setFaveMovie(allfaveMovie);
   }, [movies]);
   const deleteMovie = (id) => {
     const newMovie = movies.filter((movie) => movie.id !== id);
@@ -40,10 +40,10 @@ export const MovieProvider = ({ children }) => {
   const deleteAll = ()=>{
     setMovies([]);
   }
-  const doneMovie = (id) => {
+  const faveMovie = (id) => {
     const newMovie = [...movies];
     const index = newMovie.findIndex((movie) => movie.id === id);
-    newMovie[index].isDone = !newMovie[index].isDone;
+    newMovie[index].isFave = !newMovie[index].isFave;
     setMovies(newMovie);
     localStorage.setItem('movies', JSON.stringify(newMovie));
   };
@@ -67,13 +67,13 @@ export const MovieProvider = ({ children }) => {
         movies,
         addMovies,
         deleteMovie,
-        doneMovie,
+        faveMovie,
         PopUp,
         setPopUp,
         setId,
         deleteAll,
         editMovie,
-        doneMovieList,
+        faveMovieList,
       }}
     >
       {children}

@@ -8,13 +8,13 @@ import "bootstrap";
 
 const Movies = () => {
   const [all, setAll] = useState(true);
-  const { movies, doneMovieList, deleteAll } = useContext(MovieContext);
+  const { movies, faveMovieList, deleteAll } = useContext(MovieContext);
   const [style, setStyle] = useState("movie-container");
   const [isGrid, setGrid] = useState("false");
   const handlechange = (e) => {
     if (e.target.dataset.catagory === 'all') {
       setAll(true);
-    } else if (e.target.dataset.catagory === 'done') {
+    } else if (e.target.dataset.catagory === 'fave') {
       setAll(false);
     }
   };
@@ -45,7 +45,7 @@ const Movies = () => {
               <Movie
                 key={movie.id}
                 id={movie.id}
-                isDone={movie.isDone}
+                isFave={movie.isFave}
                 topic={movie.topic}
                 date={movie.date}
                 content={movie.content}
@@ -53,11 +53,11 @@ const Movies = () => {
               />
             ))
           ) : (
-            doneMovieList.map((movie) => (
+            faveMovieList.map((movie) => (
               <Movie
                 key={movie.id}
                 id={movie.id}
-                isDone={movie.isDone}
+                isFave={movie.isFave}
                 topic={movie.topic}
                 date={movie.date}
                 content={movie.content}

@@ -1,13 +1,13 @@
-.movie{
+.movie {
     position: relative;
     background-color: white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.158);
     padding: 20px 0 20px 20px;
     border-radius: 8px;
     margin: 5px;
-  }
-  
-  .movie-line{
+}
+
+.movie-line {
     content: '';
     width: 5px;
     height: 80%;
@@ -18,60 +18,75 @@
     transform: translateY(-50%);
     transition: all 200ms ease;
     background-color: #E94560;
-  }
-.movie-info img{
-  border-radius: 5px;
-  padding: 2px;
-  max-width: 200px;
-  height: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
-  .movie del{
+.movie-cover {
+    border-radius: 5px;
+    padding: 2px;
+    max-width: 200px;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.movie del {
     color: rgba(0, 0, 0, 0.486);
-  }
-  
-  .movie-title{
+}
+
+.movie-title {
     word-wrap: break-word;
     font-size: 24px;
     font-weight: 500;
     padding-left: 11px;
+}
 
-  }
-  .movie-content{
+.favorie-movie {
+    word-wrap: break-word;
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 20px;
+    opacity: 50%;
+    color: #FF4545;
+}
+
+.movie-content {
     margin-top: 10px;
     word-wrap: break-word;
     font-size: 16px;
     font-weight: 300;
     padding-top: 10px;
     padding-left: 11px;
-  }
-  .movie-status{
+}
+
+.movie-status {
     position: absolute;
     right: 10px;
     top: 10px;
     display: flex;
     gap: 10px;
     cursor: pointer;
-  }
-  .ball{
+}
+
+.ball {
     cursor: pointer;
     border: none;
     border-radius: 50px;
     width: 12px;
     height: 12px;
-  }
-  .movie-close{
-    background-color: #FF4545;
-  }
-  .movie-edit{
-    background-color: #F0DC2A;
-  }
-  .movie-done{
-    background-color: #69FF34;
-  }
+}
 
-  .movie-info{
+.movie-close {
+    background-color: #FF4545;
+}
+
+.movie-edit {
+    background-color: #F0DC2A;
+}
+
+.movie-fave {
+    background-color: #69FF34;
+}
+
+.movie-info {
     float: left;
     width: 80%;
-  }
+}
